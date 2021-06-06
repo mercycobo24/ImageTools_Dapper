@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+	<TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<Compile Remove="Controllers\ImagesController.cs" />
+	<Compile Remove="Handlers\ImagesHandler.cs" />
+	<Compile Remove="Contracts\SQLDataAccess - Copy.cs" />
+	<Compile Remove="Mediator\HandlerProvider.cs" />
+	<Compile Remove="Mediator\IHandlerProvider.cs" />
+	<Compile Remove="Mediator\IRequest.cs" />
+	<Compile Remove="Mediator\IRequestHandler.cs" />
+	<Compile Remove="Mediator\Mediator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Dapper" Version="2.0.35" />
+	<PackageReference Include="FluentValidation.AspNetCore" Version="8.5.0" />
+	<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="8.5.0" />
+	<PackageReference Include="MediatR" Version="8.0.1" />
+	<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+	<PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
+	<PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.3" />
+	<PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+	<PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Folder Include="Mediator\" />
+  </ItemGroup>
+
+
+</Project>

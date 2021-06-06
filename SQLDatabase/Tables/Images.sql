@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Images]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [URL] NVARCHAR(200) NOT NULL DEFAULT '', 
+    [EntityId] INT NULL, 
+    CONSTRAINT [FK_Images_ToTable] FOREIGN KEY (EntityId) REFERENCES Images(Id) 
+)
