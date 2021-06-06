@@ -4,9 +4,10 @@
 Projects in the Solution
 
 1)	ImageTool 
-2)	
+	
          -	.Net Core project. 
          -	Update and Get data from ImagesTool DB using Dapper.
+         
 2)	SQLDataBase
 
 
