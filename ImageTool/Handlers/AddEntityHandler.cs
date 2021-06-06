@@ -11,7 +11,7 @@ namespace ImageTool.Handlers
 {
     public class AddEntityHandler : IRequestHandler<EntityCommand, ImagesCounterResponse>
     {
-        ISqlDapperDataAccess _sqlDapperDataAccess;
+        readonly ISqlDapperDataAccess _sqlDapperDataAccess;
         public AddEntityHandler(ISqlDapperDataAccess sqlDapperDataAccess)
         {
             _sqlDapperDataAccess = sqlDapperDataAccess;

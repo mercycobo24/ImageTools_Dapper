@@ -13,26 +13,20 @@ namespace ImageTool.Handlers
 {
     public class AddEntityImagesHandler : IRequestHandler<EntityImagesCommand, ImagesCounterResponse>
     {
-        ISqlDapperDataAccess _sqlDapperDataAccess;
+        readonly ISqlDapperDataAccess _sqlDapperDataAccess;
         public AddEntityImagesHandler(ISqlDapperDataAccess sqlDapperDataAccess)
         {
             _sqlDapperDataAccess = sqlDapperDataAccess;
         }
         public async Task<ImagesCounterResponse> Handle(EntityImagesCommand command, CancellationToken cancellationToken)
         {
-            try
-            {
                 var imagesData = GetEntityImages(command);
                 int recordsAffected = await _sqlDapperDataAccess.ExecuteCommand("InsertImages",
                     new { images = imagesData.AsTableValuedParameter("UDTImagesTable") });
                 ImagesCounterResponse images = new ImagesCounterResponse { InsertedRecords = recordsAffected };
 
                 return images;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+           
         }
 
 

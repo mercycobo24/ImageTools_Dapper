@@ -15,7 +15,7 @@ namespace ImageTool.Handlers
     public class EntityImagesRequestHandler : IRequestHandler<EntityImagesRequest, ImagesResponse>
     {
        
-        ISqlDapperDataAccess _sqlDapperDataAccess;
+        readonly ISqlDapperDataAccess _sqlDapperDataAccess;
 
         public EntityImagesRequestHandler(ISqlDapperDataAccess sqlDapperDataAccess)
         {
@@ -24,7 +24,7 @@ namespace ImageTool.Handlers
 
         public async Task<ImagesResponse> Handle(EntityImagesRequest request, CancellationToken cancellationToken)
         {
-            var output = await _sqlDapperDataAccess.LoadData<Image, dynamic>("dbo.GetEntityImages", new { EntityId = request.EntityId });
+            var output = await _sqlDapperDataAccess.LoadData<Image, dynamic>("dbo.GetEntityImages", new {request.EntityId });
             ImagesResponse response =  new ImagesResponse { images = output };
             return response;
         }
