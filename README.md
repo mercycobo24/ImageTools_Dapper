@@ -12,7 +12,7 @@ Projects in the Solution
 
 
          -	SQLDatabase project
-         -	It is used in our project to create the ImagesTool DB in your SQL to be used in the ImageToolProject.
+         -	It is used in our project to create the ImagesTool DB to be used in the ImageToolProject.
          
          Steps to run the ImageTool project:
          1)	Create Databasein your SQL server from SQLDataBase project.
